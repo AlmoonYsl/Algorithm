@@ -1,6 +1,6 @@
 /**
-* leetcode no.1
-**/
+ *  leetcode no.1
+ */
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
