@@ -3,43 +3,32 @@
  * 
  */
 ListNode* swapPairs(ListNode* head) {
-    auto *dummyHead = new ListNode(0);
-    ListNode* h = dummyHead;
-    ListNode* p;
-    ListNode* q;
-    ListNode* t;
-    ListNode* temp;
     if (head == nullptr || head->next == nullptr) return head;
-    p = head;
-    q = head->next;
-    t = q->next;
-    if (t == nullptr){
-        q->next = p;
-        p->next = t;
-        h->next = q;
-    }
-    while (t != nullptr) {
-        q->next = p;
-        p->next = t;
-        h->next = q;
-        if (t->next == nullptr) {
-            break;
-        } else if (t->next->next == nullptr){
-            temp = p;
-            p = q->next->next;
-            q = temp->next->next;
-            h = h->next->next;
-            q->next = p;
-            p->next = nullptr;
-            h->next = q;
-            break;
+    auto* dummyHead = new ListNode(0);
+    dummyHead->next = head;
+    ListNode* next = head->next;
+    dummyHead->next = next;
+    head->next = next->next;
+    next->next = head;
+    while(head->next != nullptr){
+        ListNode* pre;
+        ListNode* cur;
+        ListNode* post;
+        pre = head;
+        if (head->next != nullptr){
+            cur = head->next;
         } else{
-            temp = p;
-            p = q->next->next;
-            q = temp->next->next;
-            h = h->next->next;
-            t = t->next->next;
+            return dummyHead->next;
         }
+        if (cur->next != nullptr){
+            post = cur->next;
+        } else{
+            return dummyHead->next;
+        }
+        cur->next = post->next;
+        post->next = cur;
+        pre->next = post;
+        head = cur;
     }
     return dummyHead->next;
 }
