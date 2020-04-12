@@ -1,5 +1,5 @@
 /**
- *  leetcode no.1
+ *  leetcode no.1 
  */
 class Solution {
 public:
