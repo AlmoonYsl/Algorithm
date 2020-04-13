@@ -1,6 +1,5 @@
 /**
  * leetcode no.26
- * 
  */
 int removeDuplicates(vector<int>& nums) {
     int len = nums.size();
