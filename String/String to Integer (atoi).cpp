@@ -1,6 +1,5 @@
 /**
  * leetcode no.8
- * 
  */
 
 int myAtoi(string str) {
