@@ -1,7 +1,6 @@
 /**
  * leetcode no.5 
  * dp[i][j] = dp[i+1][j-1] & s[i] == s[j]
- * 
  */
 string longestPalindrome(string s) {
     int length = s.size();
