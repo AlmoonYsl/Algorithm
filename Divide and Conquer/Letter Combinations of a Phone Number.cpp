@@ -1,6 +1,5 @@
 /**
  * leetcode no.17
- * 
  */
 vector<string> getLetters(int i){
     switch (i){
